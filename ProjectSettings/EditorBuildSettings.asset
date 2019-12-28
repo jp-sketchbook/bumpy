@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Bumpy/Scenes/BumpySandbox.unity
+    guid: f573472ff11fa42aabdee329d909f712
   m_configObjects: {}
