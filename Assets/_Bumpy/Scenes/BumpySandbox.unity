@@ -154,7 +154,7 @@ MonoBehaviour:
   tokenScale: 0.25
   tokenGrowthFactor: 0.8
   tokenMaxForce: 8
-  poolCapacity: 50
+  poolCapacity: 20
 --- !u!4 &90192129
 Transform:
   m_ObjectHideFlags: 0
@@ -1353,11 +1353,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39085809653144b93b02bf9dfa7bc0a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawner: {fileID: 1452011489}
-  leftOrigin: {fileID: 712359999}
-  leftKey: 0
-  rightOrigin: {fileID: 364589529}
-  rightKey: 1
 --- !u!114 &1320620971
 MonoBehaviour:
   m_ObjectHideFlags: 0
