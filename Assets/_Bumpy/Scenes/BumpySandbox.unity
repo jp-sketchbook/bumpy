@@ -152,7 +152,7 @@ MonoBehaviour:
   chargeSpeedFactor: 0.75
   defaultCharge: 0.0256
   tokenScale: 0.25
-  tokenGrowthFactor: 0.239
+  tokenGrowthFactor: 0.45
   tokenMaxForce: 8
   poolCapacity: 40
 --- !u!4 &90192129
@@ -1484,7 +1484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90fc575555f3b422187a9f029382d461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tokenPrefab: {fileID: 8892127090876801978, guid: 4dadd0b2c0d0a4d319a9ff754ccf8ca2,
+  tokenPrefab: {fileID: 8678056968820972401, guid: f9afee5e404a04d06b68447c3b23a39e,
     type: 3}
 --- !u!1 &1722679323
 GameObject:
@@ -1563,7 +1563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 406e5e19f568f4c44aea292ffcb26f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mode: 1
+  mode: 0
 --- !u!4 &1794451176
 Transform:
   m_ObjectHideFlags: 0
@@ -1584,7 +1584,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh75908
+  m_Name: pb_Mesh86380
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
