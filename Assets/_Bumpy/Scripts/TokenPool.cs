@@ -5,13 +5,12 @@ using UnityEngine;
 public class TokenPool : MonoBehaviour
 {
     public GameObject tokenPrefab;
-    public int capacity;
     private Queue<Token> _tokens;
     
     void Start()
     {
         _tokens = new Queue<Token>();
-        for (int i = 0; i < capacity; i++)
+        for (int i = 0; i < Config.active.poolCapacity; i++)
         {
             var token = Instantiate(tokenPrefab).GetComponent<Token>();
             token.transform.parent = transform;

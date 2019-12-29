@@ -29,6 +29,7 @@ public class MockRig : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             Debug.Log("Secondary mouse click.");
+            spawner.SpawnToken(rightOrigin, rightKey);
         }
     }
 }

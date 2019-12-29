@@ -12,6 +12,8 @@ public class Token : MonoBehaviour
     private Dictionary<TokenState, Action> _updateActions;
 
     private Rigidbody _body;
+    private Vector3 _force;
+    private Vector3 _scale;
     
     // Start is called before the first frame update
     void Start()
@@ -44,6 +46,9 @@ public class Token : MonoBehaviour
             { TokenState.Active, UpdateActive }
         };
         _body = GetComponent<Rigidbody>();
+        _force = new Vector3(0f, 0f, Config.active.tokenForce);
+        _scale = new Vector3();
+        SetScale(Config.active.tokenScale);
     }
 
     public void setState(TokenState targetState) {
@@ -66,24 +71,31 @@ public class Token : MonoBehaviour
     private void ExitStandby()
     {
         gameObject.SetActive(true);
-        _body.velocity = Vector3.zero;
-        _body.angularVelocity = Vector3.zero;
+        ResetBodyVelocity();
     }
 
     // ACTIVATE
     private void EnterActivate()
     {
-        
+        _body.AddForce(_force, ForceMode.Impulse);
+        SetScale(0.01f);
     }
 
     private void UpdateActivate()
     {
-
+        var currentScale = transform.localScale.x;
+        if(currentScale < Config.active.tokenScale)
+        {
+            SetScale(currentScale + Config.active.tokenGrowthFactor * Time.deltaTime);
+        }
+        else {
+            setState(TokenState.Active);
+        }
     }
 
     private void ExitActivate()
     {
-
+        SetScale(Config.active.tokenScale);
     }
 
     // ACTIVE
@@ -98,7 +110,20 @@ public class Token : MonoBehaviour
 
     private void ExitActive()
     {
+        ResetBodyVelocity();
+    }
 
+    // UTIL
+    private void ResetBodyVelocity() 
+    {
+        _body.velocity = Vector3.zero;
+        _body.angularVelocity = Vector3.zero;
+    }
+
+    private void SetScale(float scaleFactor)
+    {
+        _scale.Set(scaleFactor, scaleFactor, scaleFactor);
+        transform.localScale = _scale;
     }
 }
 

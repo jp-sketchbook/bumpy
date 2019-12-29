@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public TokenPool CubeTokensPool;
+    public TokenPool SphereTokenPool;
 
     private Dictionary<TokenKey, TokenPool> _pools;
 
@@ -15,7 +16,8 @@ public class Spawner : MonoBehaviour
 
     private void Init() {
         _pools = new Dictionary<TokenKey, TokenPool>() {
-            { TokenKey.CubeToken, CubeTokensPool }
+            { TokenKey.CubeToken, CubeTokensPool },
+            { TokenKey.SphereToken, SphereTokenPool }
         };
     }
 
