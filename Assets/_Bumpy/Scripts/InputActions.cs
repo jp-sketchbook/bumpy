@@ -18,6 +18,9 @@ public class InputActions : MonoBehaviour
     public ControllerState stateR;
      [Range(0f, 1f)]
     public float chargeR = 0f;
+    public float chargeScaleMultiplier = 0.1f; // Scales visual representation of charge amount
+    private Vector3 _chargeLScale;
+    private Vector3 _chargeRScale;
     
     [Header("Input rigs")]
     public InputRig inputRigVR;
@@ -28,6 +31,9 @@ public class InputActions : MonoBehaviour
 
     void Start()
     {
+        _chargeLScale = new Vector3();
+        _chargeRScale = new Vector3();
+        
         if(SceneModeHandler.instance)
         {
             mode = SceneModeHandler.instance.mode;
@@ -61,6 +67,10 @@ public class InputActions : MonoBehaviour
                 }
                 break;
             case ControllerState.Charging:
+                var visualScaleFactor = chargeL * chargeScaleMultiplier;
+                _chargeLScale.Set(visualScaleFactor, visualScaleFactor, visualScaleFactor);
+                _rig.originL.localScale = _chargeLScale;
+                
                 chargeL += Time.deltaTime * _chargeSpeed;
                 if(chargeL >= 1f) {
                     chargeL = 1f;
@@ -77,6 +87,7 @@ public class InputActions : MonoBehaviour
                     chargeL
                 );
                 chargeL = 0f;
+                _rig.originL.localScale = Vector3.zero;
                 stateL = ControllerState.Idle;
                 break;
             default:
@@ -94,6 +105,10 @@ public class InputActions : MonoBehaviour
                 }
                 break;
             case ControllerState.Charging:
+                var visualScaleFactor = chargeR * chargeScaleMultiplier;
+                _chargeRScale.Set(visualScaleFactor, visualScaleFactor, visualScaleFactor);
+                _rig.originR.localScale = _chargeRScale;
+
                 chargeR += Time.deltaTime * _chargeSpeed;
                 if(chargeR >= 1f) {
                     chargeR = 1f;
@@ -110,6 +125,7 @@ public class InputActions : MonoBehaviour
                     chargeR
                 );
                 chargeR = 0f;
+                _rig.originR.localScale = Vector3.zero;
                 stateR = ControllerState.Idle;
                 break;
             default:
