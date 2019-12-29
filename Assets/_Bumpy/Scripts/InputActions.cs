@@ -48,6 +48,7 @@ public class InputActions : MonoBehaviour
     void Update()
     {
         UpdateLeftController();
+        UpdateRightController();
     }
 
     private void UpdateLeftController() {
@@ -77,6 +78,39 @@ public class InputActions : MonoBehaviour
                 );
                 chargeL = 0f;
                 stateL = ControllerState.Idle;
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void UpdateRightController() {
+        switch(stateR) {
+            case ControllerState.Idle:
+                if(_rig.pressedR)
+                {
+                    chargeR = _defaultCharge;
+                    stateR = ControllerState.Charging;
+                }
+                break;
+            case ControllerState.Charging:
+                chargeR += Time.deltaTime * _chargeSpeed;
+                if(chargeR >= 1f) {
+                    chargeR = 1f;
+                    stateR = ControllerState.Fire;
+                }
+                else if(!_rig.pressedR) {
+                    stateR = ControllerState.Fire;
+                }
+                break;
+            case ControllerState.Fire:
+                spawner.SpawnToken(
+                    _rig.originR,
+                    tokenKeyR,
+                    chargeR
+                );
+                chargeR = 0f;
+                stateR = ControllerState.Idle;
                 break;
             default:
                 break;
