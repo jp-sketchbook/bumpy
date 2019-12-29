@@ -26,7 +26,16 @@ public class Spawner : MonoBehaviour
             var token = _pools[key].GetToken();
             token.transform.position = origin.position;
             token.transform.rotation = origin.rotation;
-            token.setState(TokenState.Activate);
+            token.SetState(TokenState.Activate);
+        }
+    }
+
+    public void SpawnToken(Transform origin, TokenKey key, float charge) {
+        if(_pools[key] != null) {
+            var token = _pools[key].GetToken();
+            token.transform.position = origin.position;
+            token.transform.rotation = origin.rotation;
+            token.Fire(charge);
         }
     }
 }

@@ -12,14 +12,15 @@ public class Token : MonoBehaviour
     private Dictionary<TokenState, Action> _updateActions;
 
     private Rigidbody _body;
-    private Vector3 _force;
+    private float _maxForce;
+    private float _force;
     private Vector3 _scale;
     
     // Start is called before the first frame update
     void Start()
     {
         Init();
-        setState(TokenState.Standby);
+        SetState(TokenState.Standby);
     }
 
     // Update is called once per frame
@@ -46,12 +47,20 @@ public class Token : MonoBehaviour
             { TokenState.Active, UpdateActive }
         };
         _body = GetComponent<Rigidbody>();
-        _force = new Vector3(0f, 0f, Config.active.tokenForce);
+        _maxForce = Config.active.tokenMaxForce;
+        _force = _maxForce * 0.5f;
         _scale = new Vector3();
         SetScale(Config.active.tokenScale);
     }
 
-    public void setState(TokenState targetState) {
+    // Charge range 0f to 1f
+    public void Fire(float charge)
+    {
+        _force = _maxForce * charge;
+        SetState(TokenState.Activate);
+    }
+
+    public void SetState(TokenState targetState) {
         _exitStateActions[state]();
         _enterStateActions[targetState]();
         state = targetState;
@@ -77,7 +86,7 @@ public class Token : MonoBehaviour
     // ACTIVATE
     private void EnterActivate()
     {
-        _body.AddForce(_force, ForceMode.Impulse);
+        _body.AddForce(transform.forward * _force, ForceMode.Impulse);
         SetScale(0.01f);
     }
 
@@ -89,7 +98,7 @@ public class Token : MonoBehaviour
             SetScale(currentScale + Config.active.tokenGrowthFactor * Time.deltaTime);
         }
         else {
-            setState(TokenState.Active);
+            SetState(TokenState.Active);
         }
     }
 
