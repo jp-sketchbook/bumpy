@@ -10,6 +10,8 @@ public class Token : MonoBehaviour
     private Dictionary<TokenState, Action> _enterStateActions;
     private Dictionary<TokenState, Action> _exitStateActions;
     private Dictionary<TokenState, Action> _updateActions;
+
+    private Rigidbody _body;
     
     // Start is called before the first frame update
     void Start()
@@ -41,6 +43,7 @@ public class Token : MonoBehaviour
             { TokenState.Activate, UpdateActivate },
             { TokenState.Active, UpdateActive }
         };
+        _body = GetComponent<Rigidbody>();
     }
 
     public void setState(TokenState targetState) {
@@ -49,39 +52,28 @@ public class Token : MonoBehaviour
         state = targetState;
     }
 
+    // STANDBY
     private void EnterStandby() 
     {
         gameObject.SetActive(false);
     }
 
-    private void EnterActivate()
+    private void UpdateStandby()
     {
-
-    }
-
-    private void EnterActive()
-    {
-
+        return;
     }
 
     private void ExitStandby()
     {
         gameObject.SetActive(true);
+        _body.velocity = Vector3.zero;
+        _body.angularVelocity = Vector3.zero;
     }
 
-    private void ExitActivate()
+    // ACTIVATE
+    private void EnterActivate()
     {
-
-    }
-
-    private void ExitActive()
-    {
-
-    }
-
-    private void UpdateStandby()
-    {
-
+        
     }
 
     private void UpdateActivate()
@@ -89,7 +81,22 @@ public class Token : MonoBehaviour
 
     }
 
+    private void ExitActivate()
+    {
+
+    }
+
+    // ACTIVE
+    private void EnterActive()
+    {
+
+    }
     private void UpdateActive()
+    {
+
+    }
+
+    private void ExitActive()
     {
 
     }
