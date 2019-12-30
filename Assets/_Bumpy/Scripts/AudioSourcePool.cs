@@ -41,6 +41,7 @@ public class AudioSourcePool : MonoBehaviour
             source.Stop();
         }
         source.clip = clip;
+        source.time = 0f;
         source.pitch = pitch;
         source.transform.position = position;
         source.Play();
