@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sourcePrefab: {fileID: 7517962648519915423, guid: c280d342fe413497fbf32503df9e544b,
     type: 3}
-  capacity: 80
+  capacity: 100
   sourceVolume: 0.5
 --- !u!4 &64690008
 Transform:
@@ -201,7 +201,7 @@ MonoBehaviour:
   tokenScale: 0.25
   tokenGrowthFactor: 0.8
   tokenMaxForce: 8
-  poolCapacity: 20
+  poolCapacity: 12
 --- !u!4 &90192129
 Transform:
   m_ObjectHideFlags: 0
@@ -679,8 +679,9 @@ MonoBehaviour:
   randomizePitchSphere: 1
   randomizePitchSegment: 0.5
   randomizePitchFloor: 0.165
-  pitchRangeDown: 0.555
-  pitchRangeUp: 1.21
+  randomRangeDown: 0
+  randomRangeUp: 0
+  pitchYFactor: 1
 --- !u!1 &1175498495
 GameObject:
   m_ObjectHideFlags: 0
@@ -1652,8 +1653,9 @@ MonoBehaviour:
   randomizePitchSphere: 1
   randomizePitchSegment: 0.666
   randomizePitchFloor: 0.07
-  pitchRangeDown: 0.236
-  pitchRangeUp: 1.341
+  randomRangeDown: 0
+  randomRangeUp: 0
+  pitchYFactor: 3
 --- !u!1 &1722679323
 GameObject:
   m_ObjectHideFlags: 0

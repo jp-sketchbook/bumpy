@@ -20,9 +20,13 @@ public class TokenAudio : MonoBehaviour
     [Range(0f, 1f)]
     public float randomizePitchFloor;
     [Range(0f, 0.8f)]
-    public float pitchRangeDown;
+    public float randomRangeDown;
     [Range(0f, 2f)]
-    public float pitchRangeUp;
+    public float randomRangeUp;
+
+    [Header("Raise pitch with Y axis")]
+    [Range(0f, 3f)]
+    public float pitchYFactor;
 
     private Dictionary<CollisionTag, List<AudioClip>> _hitClips;
     private Dictionary<CollisionTag, float> _randomizePitch;
@@ -60,7 +64,8 @@ public class TokenAudio : MonoBehaviour
         var randomize = _randomizePitch[tag];
 
         var clip = clips[Random.Range(0, clips.Count)];
-        var pitch = Random.Range(1f - pitchRangeDown * randomize, 1f + pitchRangeUp * randomize);
+        var pitch = Random.Range(1f - randomRangeDown * randomize, 1f + randomRangeUp * randomize);
+        pitch += position.y * pitchYFactor;
 
         AudioSourcePool.instance.PlayClip(clip, pitch, position);
     }
