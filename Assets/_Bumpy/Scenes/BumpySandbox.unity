@@ -120,6 +120,53 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &64690006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 64690008}
+  - component: {fileID: 64690007}
+  m_Layer: 0
+  m_Name: AUDIO_SourcePool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &64690007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64690006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a43fa5e00a39c4e07b68394815e0c27a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sourcePrefab: {fileID: 7517962648519915423, guid: c280d342fe413497fbf32503df9e544b,
+    type: 3}
+  capacity: 80
+  sourceVolume: 0.5
+--- !u!4 &64690008
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64690006}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &90192127
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +266,7 @@ PrefabInstance:
     - target: {fileID: 5551012469552860886, guid: 8e5a3e43afe844167a7c7218c55373a5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5551012469552860886, guid: 8e5a3e43afe844167a7c7218c55373a5,
         type: 3}
@@ -572,6 +619,7 @@ GameObject:
   m_Component:
   - component: {fileID: 933250320}
   - component: {fileID: 933250319}
+  - component: {fileID: 933250321}
   m_Layer: 0
   m_Name: TokenPool_Cube
   m_TagString: Untagged
@@ -607,6 +655,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &933250321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933250318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c03236da4bd1044ba8e4c7da11a8f672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitCubeClips:
+  - {fileID: 8300000, guid: 00796e55745d34a47af229403ec22530, type: 3}
+  hitSphereClips:
+  - {fileID: 8300000, guid: 26315c3f4831546d6854ca503ca16fb7, type: 3}
+  hitSegmentClips:
+  - {fileID: 8300000, guid: 6122afcf2b4b04b36a6872e61dba9400, type: 3}
+  hitFloorClips:
+  - {fileID: 8300000, guid: 00796e55745d34a47af229403ec22530, type: 3}
+  randomizePitchCube: 0.33
+  randomizePitchSphere: 1
+  randomizePitchSegment: 0.5
+  randomizePitchFloor: 0.165
+  pitchRangeDown: 0.555
+  pitchRangeUp: 1.21
 --- !u!1 &1175498495
 GameObject:
   m_ObjectHideFlags: 0
@@ -1315,7 +1389,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1320620969}
-  - component: {fileID: 1320620970}
   - component: {fileID: 1320620971}
   m_Layer: 0
   m_Name: Bumpy-MockRig
@@ -1323,7 +1396,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1320620969
 Transform:
   m_ObjectHideFlags: 0
@@ -1341,18 +1414,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1320620970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1320620968}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39085809653144b93b02bf9dfa7bc0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1320620971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1531,6 +1592,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1718528265}
   - component: {fileID: 1718528266}
+  - component: {fileID: 1718528267}
   m_Layer: 0
   m_Name: TokenPool_Sphere
   m_TagString: Untagged
@@ -1566,6 +1628,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tokenPrefab: {fileID: 8678056968820972401, guid: f9afee5e404a04d06b68447c3b23a39e,
     type: 3}
+--- !u!114 &1718528267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718528264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c03236da4bd1044ba8e4c7da11a8f672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitCubeClips:
+  - {fileID: 8300000, guid: 6228f6290b32849628e356a7aa710b94, type: 3}
+  hitSphereClips:
+  - {fileID: 8300000, guid: 691f84ad38a064d30b6db04b16f8d37b, type: 3}
+  hitSegmentClips:
+  - {fileID: 8300000, guid: 4d7cd3cc9a5164358ae143107ea28bd3, type: 3}
+  hitFloorClips:
+  - {fileID: 8300000, guid: dcc296633c6f24d7f82eaebc3a3d5b9d, type: 3}
+  randomizePitchCube: 0.376
+  randomizePitchSphere: 1
+  randomizePitchSegment: 0.666
+  randomizePitchFloor: 0.07
+  pitchRangeDown: 0.236
+  pitchRangeUp: 1.341
 --- !u!1 &1722679323
 GameObject:
   m_ObjectHideFlags: 0
@@ -1643,7 +1731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 406e5e19f568f4c44aea292ffcb26f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mode: 1
+  mode: 0
 --- !u!4 &1794451176
 Transform:
   m_ObjectHideFlags: 0
@@ -1834,6 +1922,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5333440191117721865, guid: 5843ea1299e1d424d9eaf933276169fc,
+        type: 3}
+      propertyPath: animSpeed
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5333440191117721865, guid: 5843ea1299e1d424d9eaf933276169fc,
+        type: 3}
+      propertyPath: loweredY
+      value: -2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6082340046969722605, guid: 5843ea1299e1d424d9eaf933276169fc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1872,7 +1970,7 @@ PrefabInstance:
     - target: {fileID: 6082340046969722605, guid: 5843ea1299e1d424d9eaf933276169fc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6082340046969722605, guid: 5843ea1299e1d424d9eaf933276169fc,
         type: 3}

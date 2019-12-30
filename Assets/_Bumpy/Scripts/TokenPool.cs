@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(TokenAudio))]
 public class TokenPool : MonoBehaviour
 {
     public GameObject tokenPrefab;
