@@ -21,7 +21,8 @@ public class Spawner : MonoBehaviour
         };
     }
 
-    public void SpawnToken(Transform origin, TokenKey key) {
+    public void SpawnToken(Transform origin, TokenKey key)
+    {
         if(_pools[key] != null) {
             var token = _pools[key].GetToken();
             token.transform.position = origin.position;
@@ -30,12 +31,19 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    public void SpawnToken(Transform origin, TokenKey key, float charge) {
+    public void SpawnToken(Transform origin, TokenKey key, float charge)
+    {
         if(_pools[key] != null) {
             var token = _pools[key].GetToken();
             token.transform.position = origin.position;
             token.transform.rotation = origin.rotation;
             token.Fire(charge);
         }
+    }
+
+    public void ResetPools()
+    {
+        _pools[TokenKey.CubeToken].Reset();
+        _pools[TokenKey.SphereToken].Reset();
     }
 }

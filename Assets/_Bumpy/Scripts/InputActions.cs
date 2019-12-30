@@ -49,6 +49,8 @@ public class InputActions : MonoBehaviour
 
         _chargeSpeed = Config.active.chargeSpeedFactor;
         _defaultCharge = Config.active.defaultCharge;
+
+        _rig.SetOnResetAction(spawner.ResetPools);
     }
 
     void Update()

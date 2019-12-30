@@ -19,9 +19,18 @@ public class TokenPool : MonoBehaviour
         }
     }
 
-    public Token GetToken() {
+    public Token GetToken()
+    {
         var token = _tokens.Dequeue();
         _tokens.Enqueue(token);
         return token;
+    }
+
+    public void Reset()
+    {
+        foreach(var token in _tokens)
+        {
+            token.SetState(TokenState.Standby);
+        }
     }
 }

@@ -12,6 +12,7 @@ public class InputRig : MonoBehaviour
     public bool pressedR;
 
     private Action _update;
+    private Action _onReset;
 
     void Start()
     {
@@ -33,11 +34,27 @@ public class InputRig : MonoBehaviour
     {
         pressedL = Input.GetMouseButton(0);
         pressedR = Input.GetMouseButton(1);
+        if(Input.GetMouseButtonDown(2)) {
+            if(_onReset != null)
+            {
+                _onReset();
+            }
+        }
     }
 
     private void VRUpdate()
     {
         pressedL = OVRInput.Get(OVRInput.RawButton.LIndexTrigger);
-        pressedR = OVRInput.Get(OVRInput.RawButton.RIndexTrigger); 
+        pressedR = OVRInput.Get(OVRInput.RawButton.RIndexTrigger);
+        if(OVRInput.Get(OVRInput.Button.One)) {
+            if(_onReset != null) {
+                _onReset();
+            }
+        }
+    }
+
+    public void SetOnResetAction(Action action)
+    {
+        _onReset = action;
     }
 }
