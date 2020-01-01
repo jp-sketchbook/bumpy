@@ -201,7 +201,7 @@ MonoBehaviour:
   tokenScale: 0.25
   tokenGrowthFactor: 0.8
   tokenMaxForce: 8
-  poolCapacity: 20
+  poolCapacity: 12
 --- !u!4 &90192129
 Transform:
   m_ObjectHideFlags: 0
