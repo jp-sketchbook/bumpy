@@ -201,7 +201,7 @@ MonoBehaviour:
   tokenScale: 0.25
   tokenGrowthFactor: 0.8
   tokenMaxForce: 8
-  poolCapacity: 12
+  poolCapacity: 10
 --- !u!4 &90192129
 Transform:
   m_ObjectHideFlags: 0
@@ -670,19 +670,21 @@ MonoBehaviour:
   hitCubeClips:
   - {fileID: 8300000, guid: e591b4d6acb9846e79fc7be932be209f, type: 3}
   - {fileID: 8300000, guid: ab87dcda0e0a24855985a9cfb80e9da8, type: 3}
+  - {fileID: 8300000, guid: 7b460b3ac2ef54061b37da90d46af0fb, type: 3}
   hitSphereClips:
   - {fileID: 8300000, guid: d08abf1b745cb4c99a297dcc78f20393, type: 3}
   - {fileID: 8300000, guid: 80bf1fa3c408144398e2ad503981e6c9, type: 3}
   - {fileID: 8300000, guid: ea44852f12eb54c73be3e8f330bb92b2, type: 3}
+  - {fileID: 8300000, guid: d677dc63802a64d0a98e7dacb0b81bcc, type: 3}
+  - {fileID: 8300000, guid: 9c0d39f718a484e7593b787dc0491777, type: 3}
   hitSegmentClips:
+  - {fileID: 8300000, guid: 69dcc83cb20d740b4ab3566161917d50, type: 3}
+  - {fileID: 8300000, guid: 604c6f7a580724bbd8417831c24feb0b, type: 3}
+  hitFloorClips:
   - {fileID: 8300000, guid: d98d74f856e91422b90b8c3c4645d927, type: 3}
   - {fileID: 8300000, guid: eccc1a92d7f3c4caa862791d0cfb3f14, type: 3}
   - {fileID: 8300000, guid: 30d3f587851d147f0ae362d48aed0b0e, type: 3}
   - {fileID: 8300000, guid: b775cb9500a45476fbcc836c3cbeb9e8, type: 3}
-  hitFloorClips:
-  - {fileID: 8300000, guid: 7b460b3ac2ef54061b37da90d46af0fb, type: 3}
-  - {fileID: 8300000, guid: d677dc63802a64d0a98e7dacb0b81bcc, type: 3}
-  - {fileID: 8300000, guid: 9c0d39f718a484e7593b787dc0491777, type: 3}
   randomizePitchCube: 0.33
   randomizePitchSphere: 1
   randomizePitchSegment: 0.5
@@ -1663,24 +1665,22 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 04f038f7b231e445082a6e137cca544e, type: 3}
   hitSegmentClips:
   - {fileID: 8300000, guid: 767c0f020d8444033bf2069e1ccef056, type: 3}
-  - {fileID: 8300000, guid: ba727db0ab3c64ef6b105f73d95674f5, type: 3}
-  - {fileID: 8300000, guid: 9e97782f95b41484ea8b12f1721f58c6, type: 3}
-  - {fileID: 8300000, guid: fcd8871d70bfb4e6caf4fea56d6288a9, type: 3}
-  - {fileID: 8300000, guid: ce80f4dbbcf394e25b45385f16f55c8d, type: 3}
-  - {fileID: 8300000, guid: dfff86a1faeef4829bf27b5e9c3f28c2, type: 3}
+  - {fileID: 8300000, guid: 6ccc6fa6ba6fa46f19cdc55df5d95321, type: 3}
   hitFloorClips:
   - {fileID: 8300000, guid: ee2d36a27d09a4f3aab11a62ee74f64d, type: 3}
   - {fileID: 8300000, guid: 028d664631a054dd0ad2599ffc98635f, type: 3}
   - {fileID: 8300000, guid: da33e46d8da9f44f78355c0d1eb1bd4d, type: 3}
   - {fileID: 8300000, guid: 6cd18a9824e7e43dcb22ab87e74ce84a, type: 3}
-  - {fileID: 8300000, guid: 0cde7bfcb1c61430ca7107f358a7e5be, type: 3}
   - {fileID: 8300000, guid: 20158bd1fdca54fc2bbf8d56d590ad22, type: 3}
+  - {fileID: 8300000, guid: fcd8871d70bfb4e6caf4fea56d6288a9, type: 3}
+  - {fileID: 8300000, guid: ce80f4dbbcf394e25b45385f16f55c8d, type: 3}
+  - {fileID: 8300000, guid: dfff86a1faeef4829bf27b5e9c3f28c2, type: 3}
   randomizePitchCube: 0.376
   randomizePitchSphere: 1
   randomizePitchSegment: 0.748
   randomizePitchFloor: 0.07
   randomRangeDown: 0.5
-  randomRangeUp: 2
+  randomRangeUp: 1.456
   pitchYFactor: 3
 --- !u!1 &1722679323
 GameObject:
