@@ -201,7 +201,7 @@ MonoBehaviour:
   tokenScale: 0.25
   tokenGrowthFactor: 0.8
   tokenMaxForce: 8
-  poolCapacity: 10
+  poolCapacity: 20
 --- !u!4 &90192129
 Transform:
   m_ObjectHideFlags: 0
@@ -678,8 +678,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d677dc63802a64d0a98e7dacb0b81bcc, type: 3}
   - {fileID: 8300000, guid: 9c0d39f718a484e7593b787dc0491777, type: 3}
   hitSegmentClips:
-  - {fileID: 8300000, guid: 69dcc83cb20d740b4ab3566161917d50, type: 3}
-  - {fileID: 8300000, guid: 604c6f7a580724bbd8417831c24feb0b, type: 3}
+  - {fileID: 8300000, guid: eb749c617b1d94083874e18c9d9c6a62, type: 3}
+  - {fileID: 8300000, guid: 27bc70e2e67a44be99b3ba8160a6a9f1, type: 3}
+  - {fileID: 8300000, guid: ef27ce662a7824c7ba482a7bc88bd2f6, type: 3}
+  - {fileID: 8300000, guid: 864403fda6a8544948002a1100dc6ab4, type: 3}
+  - {fileID: 8300000, guid: 69c228cc62f1145348fcf5c835468ab9, type: 3}
+  - {fileID: 8300000, guid: 93a3922403b47466fb28b3350812a1a0, type: 3}
+  - {fileID: 8300000, guid: 08d0b5de8fbb148aea891a6a436bb394, type: 3}
+  - {fileID: 8300000, guid: b005e7bb6fc6a4810aaf5dc35ce3431f, type: 3}
   hitFloorClips:
   - {fileID: 8300000, guid: d98d74f856e91422b90b8c3c4645d927, type: 3}
   - {fileID: 8300000, guid: eccc1a92d7f3c4caa862791d0cfb3f14, type: 3}
@@ -687,10 +693,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b775cb9500a45476fbcc836c3cbeb9e8, type: 3}
   randomizePitchCube: 0.33
   randomizePitchSphere: 1
-  randomizePitchSegment: 0.5
-  randomizePitchFloor: 0.165
+  randomizePitchSegment: 0.281
+  randomizePitchFloor: 0.334
   randomRangeDown: 0.6
-  randomRangeUp: 1.2
+  randomRangeUp: 0.6
   pitchYFactor: 1
 --- !u!1 &1175498495
 GameObject:
@@ -1664,8 +1670,15 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d6aaaaaa9bca841b390a84baacfa4f61, type: 3}
   - {fileID: 8300000, guid: 04f038f7b231e445082a6e137cca544e, type: 3}
   hitSegmentClips:
-  - {fileID: 8300000, guid: 767c0f020d8444033bf2069e1ccef056, type: 3}
-  - {fileID: 8300000, guid: 6ccc6fa6ba6fa46f19cdc55df5d95321, type: 3}
+  - {fileID: 8300000, guid: 782af7f74fb3f4a369bacfc48038d5b4, type: 3}
+  - {fileID: 8300000, guid: 5fa5c57053f8847aa8283df862c19f74, type: 3}
+  - {fileID: 8300000, guid: e6cf8f6062e3d4e7689a7a240884c080, type: 3}
+  - {fileID: 8300000, guid: a13ea3dfc4a7c44cd9f9cff660817a39, type: 3}
+  - {fileID: 8300000, guid: 53433736c788945f3be1ba7375ee81bc, type: 3}
+  - {fileID: 8300000, guid: 565e03ba82e4241349e4bb70648bc49f, type: 3}
+  - {fileID: 8300000, guid: 55b32e89437304b30841cbf51d649636, type: 3}
+  - {fileID: 8300000, guid: be9d33ae0cc5e4355b14aa2a42fe0f0f, type: 3}
+  - {fileID: 8300000, guid: d2a0e4217c6604552bff37d9653e434e, type: 3}
   hitFloorClips:
   - {fileID: 8300000, guid: ee2d36a27d09a4f3aab11a62ee74f64d, type: 3}
   - {fileID: 8300000, guid: 028d664631a054dd0ad2599ffc98635f, type: 3}
