@@ -12,7 +12,7 @@ Might do some more work on this elsewhere and look into:
 * Player movement
 
 ## Credits
-Models from Google Poly:
+* Animated floor based on [Catlike Coding](https://catlikecoding.com/unity/tutorials/basics/) tutorials
 * [Tennis Ball](https://poly.google.com/view/4GfrdEiEmkb) by Google
 
 ![Screenshot](img/bumpy03.png)
