@@ -1,6 +1,8 @@
 # bumpy
 Physics / Audio toy for Oculus Quest made in Unity.
 
+![Screenshot](img/bumpy02.jpg)
+
 ## Notes
 This is as far as I'll take this and still call it a sketch.
 Might do some more work on this elsewhere and look into:
@@ -12,3 +14,7 @@ Might do some more work on this elsewhere and look into:
 ## Credits
 Models from Google Poly:
 * [Tennis Ball](https://poly.google.com/view/4GfrdEiEmkb) by Google
+
+![Screenshot](img/bumpy03.png)
+
+![Screenshot](img/bumpy04.png)
